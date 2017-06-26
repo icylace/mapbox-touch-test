@@ -7,15 +7,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css">
     <style>
-      body {
+      /*body {
         margin: 0;
         padding: 0;
-      }
-      #map {
+      }*/
+
+      /*#map {
         bottom: 0;
         position: absolute;
         top: 0;
         width: 100%;
+      }*/
+
+      body {
+        background-color: #343332;
+        color: #777777;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        display: flex;
+        height: 100vh;
+      }
+
+      .A {
+        border-right: 1px solid #222222;
+        display: flex;
+        flex-basis: 0;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .B {
+        border-bottom: 1px solid #222222;
+        flex-basis: 0;
+        padding: 0 10px;
+      }
+
+      .C {
+        flex-grow: 1;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .D {
+        margin: 0;
+        list-style-type: none;
+      }
+      .D > li {
+        border-bottom: 1px solid #222222;
+        cursor: pointer;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .map {
+        flex-grow: 4;
+      }
+
+      @media (max-width: 599px) {
+        main {
+          flex-direction: column-reverse;
+        }
+        .map {
+          flex-grow: 1.5;
+        }
+        .C {
+          height: 10%;
+        }
+        .A {
+          border-right: 0;
+        }
+        .B {
+          font-size: 70%;
+        }
+      }
+
+      @media (min-width: 600px) {
+        .map {
+          flex-grow: 2.5;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .map {
+          flex-grow: 4;
+        }
       }
     </style>
   </head>
