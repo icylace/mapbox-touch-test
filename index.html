@@ -32,8 +32,11 @@
       .foo {
         flex-basis: 0;
 
-        /* If the following line is commented out, the buggy "locking" behavior
-        affects Safari/Chrome on the iPhone in landscape mode. */
+        /**
+         * If the following line is commented out, the buggy "locking"
+         * behavior affects Safari/Chrome on the iPhone in both
+         * portrait mode and landscape mode.
+         */
         flex-grow: 1;
       }
       .map {
