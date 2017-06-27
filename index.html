@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>MapBox Test</title>
+    <title>MapBox iPhone touch test</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css">
     <style>
@@ -24,16 +24,20 @@
         /*margin-right: 1rem;*/
         /*margin-right: 1vw;*/
 
-        /* Leaving `margin-right` undefined will also work here. */
+        /* Map also works if `margin-right` is absent. */
       }
       main {
         display: flex;
       }
       .foo {
         flex-basis: 0;
+
+        /* If the following line is commented out, the buggy "locking" behavior
+        affects Safari/Chrome on the iPhone in landscape mode. */
+        flex-grow: 1;
       }
       .map {
-        flex-grow: 1;
+        flex-grow: 2;
       }
     </style>
   </head>
@@ -42,13 +46,11 @@
     <main>
       <div class="foo">
         <h1>MapBox iPhone touch test</h1>
-        <p>In this particular setup, the <code>&lt;body&gt;</code> element must either have it's right margin undefined or have it defined with an explicit length in order for the MapBox element to respond to touch events on the iPhone.</p>
-        <p>I'm not sure why that is&hellip;</p>
+        <p>In this particular setup, the <code>&lt;body&gt;</code> element must either have it's right margin undefined or have it defined with an explicit length in order for the map to respond to touch events on the iPhone in portrait mode.</p>
         <p>Look at the page source for more info.</p>
-        <p>Browsers known to be affected:</p>
+        <p>Browsers and phone configurations known to be affected:</p>
         <ul>
-          <li>Safari for iOS 10.3.2 on iPhone 6</li>
-          <li>Chrome for iOS 10.3.2 on iPhone 6</li>
+          <li>Safari and Chrome for iOS 10.3.2 on iPhone 6 in portrait mode</li>
         </ul>
       </div>
       <div class="map" id="map"></div>
