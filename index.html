@@ -11,7 +11,7 @@
         /* Try out different values for `margin-right` to see this bug in action. */
 
         /* Map doesn't work with these: */
-        /*margin-right: 0;*/
+        margin-right: 0;
         /*margin-right: auto;*/
         /*margin-right: inherit;*/
         /*margin-right: initial;*/
@@ -23,6 +23,8 @@
         /*margin-right: 1em;*/
         /*margin-right: 1rem;*/
         /*margin-right: 1vw;*/
+
+        /* Leaving `margin-right` undefined will also work here. */
       }
       main {
         display: flex;
@@ -39,7 +41,7 @@
 
     <main>
       <div class="foo">
-        <h1>MapBox iPhone rotation test</h1>
+        <h1>MapBox iPhone touch test</h1>
         <p>In this particular setup, the <code>&lt;body&gt;</code> element must either have it's right margin undefined or have it defined with an explicit length in order for the MapBox element to respond to touch events.</p>
         <p>I'm not sure why that is&hellip;</p>
         <p>Browsers known to be affected:</p>
